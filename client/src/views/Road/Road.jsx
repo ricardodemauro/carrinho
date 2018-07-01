@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from 'react-redux'
 import { locationSearch } from '../../actions/roadActions'
+import { GOOGLE_MAPS_API_KEY } from '../../constants'
 import {
   withScriptjs,
   withGoogleMap,
@@ -104,9 +105,14 @@ class Road extends React.Component {
     render() {
       const { coords } = this.props
       const center = coords.length > 0 ? coords[0] : { lat: -23.6917598, lng: -46.5616912 }
+      //const googleUri = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}`
+      const googleUri = `https://maps.googleapis.com/maps/api/js`
+      if(coords.length == 0) {
+        return (<div />)
+      }
       return (
           <CustomSkinMap
-            googleMapURL="https://maps.googleapis.com/maps/api/js"
+            googleMapURL={googleUri}
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `100vh` }} />}
             mapElement={<div style={{ height: `100%` }} />}

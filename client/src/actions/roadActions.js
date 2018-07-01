@@ -1,16 +1,17 @@
 import * as types from '../actionTypes'
-
-const mockData = {
-    coords: [
-        { lat: -23.6917598, lng: -46.5616912, time: 0 },
-        { lat: -23.6917511, lng: -46.5615522, time: 1000 },
-        { lat: -23.6917511, lng: -46.5615522, time: 2000 },
-        { lat: -23.6917216, lng: -46.5613135, time: 3000 }
-    ]
-}
+import { BASE_URI } from '../constants'
 
 export const locationSearch = () => dispatch => {
-    dispatch(locationSearchDone(mockData))
+    const baseUri = BASE_URI();
+    const fullUri = `${baseUri}locations`
+    return fetch(fullUri)
+        .then(response => response.json())
+        .then(json => {
+            dispatch(locationSearchDone(json))
+        })
+        .catch(err => {
+            dispatch(locationSearchError(err))
+        })
 }
 
 export const locationSearchDone = (result) => {

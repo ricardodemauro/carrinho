@@ -7,7 +7,7 @@ const roadReducer = (state = initialState, action) => {
         case LOCATION_SEARCH_DONE:
             return {
                 ...state,
-                coords: result.coords
+                coords: result
             }
         case LOCATION_SEARCH_ERROR:
         case LOCATION_SEARCH:
