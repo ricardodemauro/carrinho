@@ -12,3 +12,7 @@ para parar o container
 
 2 docker stop "comeco do container id"
 e.g. docker stop 4e
+
+
+
+https://docs.microsoft.com/pt-br/azure/app-service/containers/tutorial-custom-docker-image#push-the-docker-image-to-docker-hub
