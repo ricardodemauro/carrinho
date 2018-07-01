@@ -1,0 +1,14 @@
+1 instalar docker
+
+2 rodar comando
+docker run -p 3002:3001 -d ricardomauro/node-carron3
+
+3 rodar comando
+docker run -p 3002:3001 -d ricardomauro/node-carron3
+
+
+para parar o container
+1 docker ps
+
+2 docker stop "comeco do container id"
+e.g. docker stop 4e

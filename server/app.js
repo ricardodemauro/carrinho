@@ -9,7 +9,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use(express.static('../client/build'));
+app.use(express.static('clientApp'));
 
 var router = express.Router();              // get an instance of the express Router
 
