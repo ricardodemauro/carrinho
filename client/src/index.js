@@ -3,11 +3,10 @@ import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch } from "react-router-dom";
 
-import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import { createLogger } from 'redux-logger'
-import thunkMiddleware from 'redux-thunk'
 
 import rootReducer from './reducers/index'
 
